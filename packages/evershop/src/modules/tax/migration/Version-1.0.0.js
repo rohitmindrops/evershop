@@ -21,7 +21,7 @@ export default async (connection) => {
   // Add a constraint to product table
   await execute(
     connection,
-    `ALTER TABLE "product" ADD CONSTRAINT "FK_TAX_CLASS" FOREIGN KEY ("tax_class") REFERENCES "tax_class" ("tax_class_id") ON DELETE SET NULL`
+    'ALTER TABLE "product" ADD CONSTRAINT "FK_TAX_CLASS" FOREIGN KEY ("tax_class") REFERENCES "tax_class" ("tax_class_id") ON DELETE SET NULL'
   );
 
   // Prevent deleting the default tax class

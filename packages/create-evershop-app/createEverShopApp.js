@@ -36,7 +36,7 @@ function init() {
       );
       console.log();
       console.log(
-        `    If you have any problems, do not hesitate to file an issue:`
+        "    If you have any problems, do not hesitate to file an issue:"
       );
       console.log(
         `      ${chalk.cyan(
@@ -146,7 +146,7 @@ function createApp(name, verbose, useYarn) {
       if (npmInfo.npmVersion) {
         console.log(
           chalk.yellow(
-            `Please update to npm 7 or higher for a workspaces feature.\n`
+            "Please update to npm 7 or higher for a workspaces feature.\n"
           )
         );
       }
@@ -311,7 +311,7 @@ function checkAppName(appName) {
         `Cannot create a project named ${chalk.green(
           `"${appName}"`
         )} because a dependency with the same name exists.\n` +
-          `Due to the way npm works, the following names are not allowed:\n\n`
+          "Due to the way npm works, the following names are not allowed:\n\n"
       ) +
         chalk.cyan(dependencies.map((depName) => `  ${depName}`).join('\n')) +
         chalk.red('\n\nPlease choose a different project name.')
@@ -446,27 +446,27 @@ function checkThatNpmCanReadCwd() {
   }
   console.error(
     chalk.red(
-      `Could not start an npm process in the right directory.\n\n` +
+      "Could not start an npm process in the right directory.\n\n" +
         `The current directory is: ${chalk.bold(cwd)}\n` +
         `However, a newly started npm process runs in: ${chalk.bold(
           npmCWD
         )}\n\n` +
-        `This is probably caused by a misconfigured system terminal shell.`
+        "This is probably caused by a misconfigured system terminal shell."
     )
   );
   if (process.platform === 'win32') {
     console.error(
       `${chalk.red(
-        `On Windows, this can usually be fixed by running:\n\n`
+        "On Windows, this can usually be fixed by running:\n\n"
       )}  ${chalk.cyan(
         'reg'
       )} delete "HKCU\\Software\\Microsoft\\Command Processor" /v AutoRun /f\n` +
         `  ${chalk.cyan(
           'reg'
         )} delete "HKLM\\Software\\Microsoft\\Command Processor" /v AutoRun /f\n\n${chalk.red(
-          `Try to run the above two lines in the terminal.\n`
+          "Try to run the above two lines in the terminal.\n"
         )}${chalk.red(
-          `To learn more about this problem, read: https://blogs.msdn.microsoft.com/oldnewthing/20071121-00/?p=24433/`
+          "To learn more about this problem, read: https://blogs.msdn.microsoft.com/oldnewthing/20071121-00/?p=24433/"
         )}`
     );
   }

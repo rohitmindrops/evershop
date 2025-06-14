@@ -53,7 +53,7 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_OPTION" ON "attribute_option" ("attribute_id")`
+    'CREATE INDEX "FK_ATTRIBUTE_OPTION" ON "attribute_option" ("attribute_id")'
   );
 
   await insert('attribute_option')
@@ -134,11 +134,11 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_GROUP_LINK" ON "attribute_group_link" ("group_id")`
+    'CREATE INDEX "FK_GROUP_LINK" ON "attribute_group_link" ("group_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_LINK" ON "attribute_group_link" ("attribute_id")`
+    'CREATE INDEX "FK_ATTRIBUTE_LINK" ON "attribute_group_link" ("attribute_id")'
   );
 
   await insert('attribute_group_link')
@@ -178,27 +178,27 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VARIANT_ONE" ON "variant_group" ("attribute_one")`
+    'CREATE INDEX "FK_ATTRIBUTE_VARIANT_ONE" ON "variant_group" ("attribute_one")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VARIANT_TWO" ON "variant_group" ("attribute_two")`
+    'CREATE INDEX "FK_ATTRIBUTE_VARIANT_TWO" ON "variant_group" ("attribute_two")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VARIANT_THREE" ON "variant_group" ("attribute_three")`
+    'CREATE INDEX "FK_ATTRIBUTE_VARIANT_THREE" ON "variant_group" ("attribute_three")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VARIANT_FOUR" ON "variant_group" ("attribute_four")`
+    'CREATE INDEX "FK_ATTRIBUTE_VARIANT_FOUR" ON "variant_group" ("attribute_four")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VARIANT_FIVE" ON "variant_group" ("attribute_five")`
+    'CREATE INDEX "FK_ATTRIBUTE_VARIANT_FIVE" ON "variant_group" ("attribute_five")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_GROUP_VARIANT" ON "variant_group" ("attribute_group_id")`
+    'CREATE INDEX "FK_ATTRIBUTE_GROUP_VARIANT" ON "variant_group" ("attribute_group_id")'
   );
 
   await execute(
@@ -232,11 +232,11 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_ATTRIBUTE_GROUP" ON "product" ("group_id")`
+    'CREATE INDEX "FK_PRODUCT_ATTRIBUTE_GROUP" ON "product" ("group_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_VARIANT_GROUP" ON "product" ("variant_group_id")`
+    'CREATE INDEX "FK_PRODUCT_VARIANT_GROUP" ON "product" ("variant_group_id")'
   );
 
   await execute(
@@ -257,15 +257,15 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_VALUE_LINK" ON "product_attribute_value_index" ("attribute_id")`
+    'CREATE INDEX "FK_ATTRIBUTE_VALUE_LINK" ON "product_attribute_value_index" ("attribute_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ATTRIBUTE_OPTION_VALUE_LINK" ON "product_attribute_value_index" ("option_id")`
+    'CREATE INDEX "FK_ATTRIBUTE_OPTION_VALUE_LINK" ON "product_attribute_value_index" ("option_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_ATTRIBUTE_LINK" ON "product_attribute_value_index" ("product_id")`
+    'CREATE INDEX "FK_PRODUCT_ATTRIBUTE_LINK" ON "product_attribute_value_index" ("product_id")'
   );
 
   await execute(
@@ -284,7 +284,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_CUSTOM_OPTION" ON "product_custom_option" ("product_custom_option_product_id")`
+    'CREATE INDEX "FK_PRODUCT_CUSTOM_OPTION" ON "product_custom_option" ("product_custom_option_product_id")'
   );
 
   await execute(
@@ -302,7 +302,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CUSTOM_OPTION_VALUE" ON "product_custom_option_value" ("option_id")`
+    'CREATE INDEX "FK_CUSTOM_OPTION_VALUE" ON "product_custom_option_value" ("option_id")'
   );
 
   await execute(
@@ -324,7 +324,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_DESCRIPTION" ON "product_description" ("product_description_product_id")`
+    'CREATE INDEX "FK_PRODUCT_DESCRIPTION" ON "product_description" ("product_description_product_id")'
   );
 
   await execute(
@@ -340,7 +340,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_IMAGE_LINK" ON "product_image" ("product_image_product_id")`
+    'CREATE INDEX "FK_PRODUCT_IMAGE_LINK" ON "product_image" ("product_image_product_id")'
   );
 
   await execute(
@@ -372,11 +372,11 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CATEGORY_PRODUCT_LINK" ON "product_category" ("category_id")`
+    'CREATE INDEX "FK_CATEGORY_PRODUCT_LINK" ON "product_category" ("category_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_CATEGORY_LINK" ON "product_category" ("product_id")`
+    'CREATE INDEX "FK_PRODUCT_CATEGORY_LINK" ON "product_category" ("product_id")'
   );
 
   await execute(
@@ -399,7 +399,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CATEGORY_DESCRIPTION" ON "category_description" ("category_description_category_id")`
+    'CREATE INDEX "FK_CATEGORY_DESCRIPTION" ON "category_description" ("category_description_category_id")'
   );
 
   // Create 3 default categories, Kids, Men, Women
@@ -489,11 +489,11 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_COLLECTION_PRODUCT_LINK" ON "product_collection" ("collection_id")`
+    'CREATE INDEX "FK_COLLECTION_PRODUCT_LINK" ON "product_collection" ("collection_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PRODUCT_COLLECTION_LINK" ON "product_collection" ("product_id")`
+    'CREATE INDEX "FK_PRODUCT_COLLECTION_LINK" ON "product_collection" ("product_id")'
   );
 
   /* CREATE SOME TRIGGERS */

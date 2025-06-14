@@ -32,6 +32,6 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CMS_PAGE_DESCRIPTION" ON "cms_page_description" ("cms_page_description_cms_page_id")`
+    'CREATE INDEX "FK_CMS_PAGE_DESCRIPTION" ON "cms_page_description" ("cms_page_description_cms_page_id")'
   );
 };

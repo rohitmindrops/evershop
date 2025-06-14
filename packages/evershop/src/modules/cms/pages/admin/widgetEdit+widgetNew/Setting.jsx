@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default function Setting({ type }) {
-  const areaId = `widget_setting_form`;
+  const areaId = "widget_setting_form";
   return (
     <Card title={`${type.name} widget setting`}>
       <Card.Session>

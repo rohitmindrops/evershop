@@ -4,23 +4,23 @@ export default async (connection) => {
   // Rename sub_total column to line_total
   await execute(
     connection,
-    `ALTER TABLE "cart_item" RENAME COLUMN sub_total TO line_total`
+    'ALTER TABLE "cart_item" RENAME COLUMN sub_total TO line_total'
   );
 
   await execute(
     connection,
-    `ALTER TABLE "order_item" RENAME COLUMN sub_total TO line_total`
+    'ALTER TABLE "order_item" RENAME COLUMN sub_total TO line_total'
   );
 
   // Rename total column to line_total_incl_tax
   await execute(
     connection,
-    `ALTER TABLE "cart_item" RENAME COLUMN total TO line_total_incl_tax`
+    'ALTER TABLE "cart_item" RENAME COLUMN total TO line_total_incl_tax'
   );
 
   await execute(
     connection,
-    `ALTER TABLE "order_item" RENAME COLUMN total TO line_total_incl_tax`
+    'ALTER TABLE "order_item" RENAME COLUMN total TO line_total_incl_tax'
   );
 
   // Add a column 'tax_amount_before_discount' to the cart item table if it does not exist
@@ -111,73 +111,73 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `UPDATE "cart_item" SET tax_amount_before_discount = ROUND(COALESCE(final_price, 0) * (COALESCE(tax_percent, 0) / 100), 2) * qty`
+    'UPDATE "cart_item" SET tax_amount_before_discount = ROUND(COALESCE(final_price, 0) * (COALESCE(tax_percent, 0) / 100), 2) * qty'
   );
 
   await execute(
     connection,
-    `UPDATE "order_item" SET tax_amount_before_discount = ROUND(COALESCE(final_price, 0) * (COALESCE(tax_percent, 0) / 100), 2) * qty`
+    'UPDATE "order_item" SET tax_amount_before_discount = ROUND(COALESCE(final_price, 0) * (COALESCE(tax_percent, 0) / 100), 2) * qty'
   );
 
   // Calculate the tax_amount_before_discount on cart and order by summing up the tax_amount_before_discount of all items
   await execute(
     connection,
-    `UPDATE "cart" SET tax_amount_before_discount = (SELECT SUM(tax_amount_before_discount) FROM cart_item WHERE cart_item.cart_id = cart.cart_id)`
+    'UPDATE "cart" SET tax_amount_before_discount = (SELECT SUM(tax_amount_before_discount) FROM cart_item WHERE cart_item.cart_id = cart.cart_id)'
   );
 
   await execute(
     connection,
-    `UPDATE "order" SET tax_amount_before_discount = (SELECT SUM(tax_amount_before_discount) FROM "order_item" WHERE "order_item".order_item_order_id = "order".order_id)`
+    'UPDATE "order" SET tax_amount_before_discount = (SELECT SUM(tax_amount_before_discount) FROM "order_item" WHERE "order_item".order_item_order_id = "order".order_id)'
   );
 
   await execute(
     connection,
-    `UPDATE "cart_item" SET line_total_with_discount = line_total`
+    'UPDATE "cart_item" SET line_total_with_discount = line_total'
   );
 
   await execute(
     connection,
-    `UPDATE "cart_item" SET line_total = COALESCE(final_price, 0) * qty`
+    'UPDATE "cart_item" SET line_total = COALESCE(final_price, 0) * qty'
   );
 
   await execute(
     connection,
-    `UPDATE "order_item" SET line_total_with_discount = line_total`
+    'UPDATE "order_item" SET line_total_with_discount = line_total'
   );
 
   await execute(
     connection,
-    `UPDATE "order_item" SET line_total = COALESCE(final_price, 0) * qty`
+    'UPDATE "order_item" SET line_total = COALESCE(final_price, 0) * qty'
   );
 
   await execute(
     connection,
-    `UPDATE "cart_item" SET line_total_with_discount_incl_tax = line_total_with_discount + tax_amount`
+    'UPDATE "cart_item" SET line_total_with_discount_incl_tax = line_total_with_discount + tax_amount'
   );
 
   await execute(
     connection,
-    `UPDATE "order_item" SET line_total_with_discount_incl_tax = line_total_with_discount + tax_amount`
+    'UPDATE "order_item" SET line_total_with_discount_incl_tax = line_total_with_discount + tax_amount'
   );
 
   await execute(
     connection,
-    `UPDATE "cart" SET sub_total_with_discount = (SELECT SUM(line_total_with_discount) FROM cart_item WHERE cart_item.cart_id = cart.cart_id)`
+    'UPDATE "cart" SET sub_total_with_discount = (SELECT SUM(line_total_with_discount) FROM cart_item WHERE cart_item.cart_id = cart.cart_id)'
   );
 
   await execute(
     connection,
-    `UPDATE "order" SET sub_total_with_discount = (SELECT SUM(line_total_with_discount) FROM "order_item" WHERE "order_item".order_item_order_id = "order".order_id)`
+    'UPDATE "order" SET sub_total_with_discount = (SELECT SUM(line_total_with_discount) FROM "order_item" WHERE "order_item".order_item_order_id = "order".order_id)'
   );
 
   await execute(
     connection,
-    `UPDATE "cart" SET sub_total_with_discount_incl_tax = sub_total_with_discount + tax_amount`
+    'UPDATE "cart" SET sub_total_with_discount_incl_tax = sub_total_with_discount + tax_amount'
   );
 
   await execute(
     connection,
-    `UPDATE "order" SET sub_total_with_discount_incl_tax = sub_total_with_discount + tax_amount`
+    'UPDATE "order" SET sub_total_with_discount_incl_tax = sub_total_with_discount + tax_amount'
   );
 
   // Add a column 'total_tax_amount' to the cart table if it does not exist
@@ -187,7 +187,7 @@ export default async (connection) => {
   );
 
   // Update the value for the new column 'total_tax_amount' on the cart table get value from the `tax_amount` column
-  await execute(connection, `UPDATE "cart" SET total_tax_amount = tax_amount`);
+  await execute(connection, 'UPDATE "cart" SET total_tax_amount = tax_amount');
 
   // Add a column 'total_tax_amount' to the order table if it does not exist
   await execute(
@@ -196,5 +196,5 @@ export default async (connection) => {
   );
 
   // Update the value for the new column 'total_tax_amount' on the cart table get value from the `tax_amount` column
-  await execute(connection, `UPDATE "order" SET total_tax_amount = tax_amount`);
+  await execute(connection, 'UPDATE "order" SET total_tax_amount = tax_amount');
 };

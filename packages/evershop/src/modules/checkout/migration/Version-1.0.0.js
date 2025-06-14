@@ -96,11 +96,11 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CART_ITEM" ON "cart_item" ("cart_id")`
+    'CREATE INDEX "FK_CART_ITEM" ON "cart_item" ("cart_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CART_ITEM_PRODUCT" ON "cart_item" ("product_id")`
+    'CREATE INDEX "FK_CART_ITEM_PRODUCT" ON "cart_item" ("product_id")'
   );
 
   await execute(
@@ -166,7 +166,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ORDER_ACTIVITY" ON "order_activity" ("order_activity_order_id")`
+    'CREATE INDEX "FK_ORDER_ACTIVITY" ON "order_activity" ("order_activity_order_id")'
   );
 
   await execute(
@@ -221,7 +221,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ORDER" ON "order_item" ("order_item_order_id")`
+    'CREATE INDEX "FK_ORDER" ON "order_item" ("order_item_order_id")'
   );
 
   await execute(
@@ -244,7 +244,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_PAYMENT_TRANSACTION_ORDER" ON "payment_transaction" ("payment_transaction_order_id")`
+    'CREATE INDEX "FK_PAYMENT_TRANSACTION_ORDER" ON "payment_transaction" ("payment_transaction_order_id")'
   );
 
   await execute(
@@ -263,7 +263,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_ORDER_SHIPMENT" ON "shipment" ("shipment_order_id")`
+    'CREATE INDEX "FK_ORDER_SHIPMENT" ON "shipment" ("shipment_order_id")'
   );
 
   // Reduce product stock when order is placed if product manage stock is true

@@ -327,7 +327,7 @@ export default function BasicMenuSetting({
       const Swappable = await loadSwappable();
 
       const swappable = new Swappable(
-        document.querySelectorAll(`div.menu__container`),
+        document.querySelectorAll("div.menu__container"),
         {
           draggable: 'div.draggable',
           mirror: {
