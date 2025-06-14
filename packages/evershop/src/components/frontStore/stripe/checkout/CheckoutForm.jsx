@@ -183,8 +183,7 @@ export default function CheckoutForm({
       <RenderIfTrue condition={!!(stripe && elements)}>
         <div>
           <div className="stripe-form">
-            {stripePublishableKey &&
-              stripePublishableKey.startsWith('pk_test') && (
+            {stripePublishableKey?.startsWith('pk_test') && (
                 <TestCards
                   showTestCard={showTestCard}
                   testSuccess={testSuccess}

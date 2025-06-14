@@ -14,7 +14,7 @@ import { graphqlErrorMessageFormat } from '../../services/graphqlErrorMessageFor
 export default async function graphql(request, response, delegate, next) {
   const { currentRoute } = request;
   const schema =
-    currentRoute && currentRoute.isAdmin ? adminSchema : storeFrontSchema;
+    currentRoute?.isAdmin ? adminSchema : storeFrontSchema;
   // TODO: Should we wait for previous async middlewares?
   try {
     const { body } = request;

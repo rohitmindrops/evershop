@@ -16,7 +16,7 @@ function isFieldRequired(schema, fieldName) {
 }
 
 function getErrorMessage(schema, fieldName, defaultMessage) {
-  if (schema && schema.errorMessage) {
+  if (schema?.errorMessage) {
     if (schema.errorMessage[fieldName]) {
       return schema.errorMessage[fieldName];
     } else {

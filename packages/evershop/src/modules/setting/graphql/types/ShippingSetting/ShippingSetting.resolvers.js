@@ -6,7 +6,7 @@ export default {
       const allowedCountries = setting.find(
         (s) => s.name === 'allowedCountries'
       );
-      if (allowedCountries && allowedCountries.value) {
+      if (allowedCountries?.value) {
         return JSON.parse(allowedCountries.value);
       } else {
         return ['US'];

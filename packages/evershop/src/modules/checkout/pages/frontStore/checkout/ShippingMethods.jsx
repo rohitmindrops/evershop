@@ -60,7 +60,7 @@ export default function ShippingMethods({
       const selectedCountry = allowedCountries.find(
         (c) => c.code === country?.value
       );
-      if (selectedCountry && selectedCountry.provinces) {
+      if (selectedCountry?.provinces) {
         if (province && !province.value) {
           check = false;
           setAddressProvided(false);
