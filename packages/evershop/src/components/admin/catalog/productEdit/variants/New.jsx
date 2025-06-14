@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export function New({ createVariantGroupApi, setGroup }) {
-  const [action, setAction] = React.useState(undefined);
+  const [action, setAction] = React.useState();
   return (
     <>
       <Card.Session>
@@ -45,7 +45,7 @@ export function New({ createVariantGroupApi, setGroup }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setAction(undefined);
+              setAction();
             }}
           >
             Cancel

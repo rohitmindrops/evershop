@@ -67,7 +67,7 @@ export default function Image({ category, imageUploadUrl }) {
               {
                 name: 'Remove',
                 variant: 'critical',
-                onAction: () => setImage(undefined)
+                onAction: () => setImage()
               }
             ]
           : []

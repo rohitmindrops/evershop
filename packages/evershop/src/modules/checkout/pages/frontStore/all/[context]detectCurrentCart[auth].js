@@ -37,7 +37,7 @@ export default async (request, response, delegate, next) => {
         request.session.cartID = customerCart.uuid;
         setContextValue(request, 'cartId', customerCart.uuid);
       } else {
-        setContextValue(request, 'cartId', undefined);
+        setContextValue(request, 'cartId');
       }
     }
   }

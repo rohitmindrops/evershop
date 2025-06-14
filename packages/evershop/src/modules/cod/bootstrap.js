@@ -15,7 +15,7 @@ export default () => {
             if (parseInt(codStatus, 10) !== 1) {
               return null;
             } else {
-              this.setError('payment_method', undefined);
+              this.setError('payment_method');
               return paymentMethod;
             }
           }
