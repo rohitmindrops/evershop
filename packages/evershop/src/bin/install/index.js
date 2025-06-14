@@ -51,35 +51,35 @@ async function install() {
       name: 'databaseHost',
       message: 'Postgres Database Host (localhost)',
       initial: process.env.DB_HOST || 'localhost',
-      skip: !!process.env.DB_HOST
+      skip: Boolean(process.env.DB_HOST)
     },
     {
       type: 'input',
       name: 'databasePort',
       message: 'Postgres Database Port (5432)',
       initial: process.env.DB_PORT || 5432,
-      skip: !!process.env.DB_PORT
+      skip: Boolean(process.env.DB_PORT)
     },
     {
       type: 'input',
       name: 'databaseName',
       message: 'Postgres Database Name (evershop)',
       initial: process.env.DB_NAME || 'evershop',
-      skip: !!process.env.DB_NAME
+      skip: Boolean(process.env.DB_NAME)
     },
     {
       type: 'input',
       name: 'databaseUser',
       message: 'Postgres Database User (postgres)',
       initial: process.env.DB_USER || 'postgres',
-      skip: !!process.env.DB_USER
+      skip: Boolean(process.env.DB_USER)
     },
     {
       type: 'input',
       name: 'databasePassword',
       message: 'PostgreSQL Database Password (<empty>)',
       initial: process.env.DB_PASSWORD || '',
-      skip: !!process.env.DB_PASSWORD
+      skip: Boolean(process.env.DB_PASSWORD)
     }
   ];
 
@@ -142,14 +142,14 @@ async function install() {
       name: 'fullName',
       message: 'Your full name',
       initial: process.env.ADMIN_FULLNAME || '',
-      skip: !!process.env.ADMIN_FULLNAME
+      skip: Boolean(process.env.ADMIN_FULLNAME)
     },
     {
       type: 'input',
       name: 'email',
       message: 'Your administrator user email',
       initial: process.env.ADMIN_EMAIL || 'admin@admin.com',
-      skip: !!process.env.ADMIN_EMAIL,
+      skip: Boolean(process.env.ADMIN_EMAIL),
       validate: (value) => {
         if (
           !value.match(
@@ -166,7 +166,7 @@ async function install() {
       name: 'password',
       message: 'Your administrator user password',
       initial: process.env.ADMIN_PASSWORD || '123456',
-      skip: !!process.env.ADMIN_PASSWORD,
+      skip: Boolean(process.env.ADMIN_PASSWORD),
       validate: (value) => {
         if (value.length < 8) {
           return 'Your password must be at least 8 characters.';

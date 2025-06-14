@@ -475,7 +475,7 @@ class Limit {
       return '';
     }
     return `LIMIT ${this._limit === null ? null : this._limit} OFFSET ${
-      +this._offset! || 0
+      Number(this._offset!) || 0
     } `;
   }
 

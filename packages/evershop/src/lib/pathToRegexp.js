@@ -31,7 +31,7 @@ function parse(e, t) {
         optional: T,
         repeat: R,
         partial: y,
-        asterisk: !!m,
+        asterisk: Boolean(m),
         pattern: v ? escapeGroup(v) : m ? '.*' : `[^${escapeString(E)}]+?`
       });
     }

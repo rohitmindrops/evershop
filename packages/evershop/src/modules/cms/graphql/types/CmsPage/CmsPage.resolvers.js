@@ -15,7 +15,7 @@ export default {
     cmsPages: async (_, { filters = [] }, { user }) => {
       const query = getCmsPagesBaseQuery();
       const root = new CMSPageCollection(query);
-      await root.init(filters, !!user);
+      await root.init(filters, Boolean(user));
       return root;
     }
   },

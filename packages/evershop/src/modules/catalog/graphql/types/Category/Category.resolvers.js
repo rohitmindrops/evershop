@@ -26,7 +26,7 @@ export default {
     categories: async (_, { filters = [] }, { user }) => {
       const query = getCategoriesBaseQuery();
       const root = new CategoryCollection(query);
-      await root.init(filters, !!user);
+      await root.init(filters, Boolean(user));
       return root;
     }
   },
@@ -37,7 +37,7 @@ export default {
         !user
       );
       const root = new ProductCollection(query);
-      await root.init(filters, !!user);
+      await root.init(filters, Boolean(user));
       return root;
     },
     availableAttributes: async (category) => {

@@ -73,7 +73,7 @@ function Toggle({ name, value, label, onChange, error, instruction }) {
   return (
     <div className={`form-field-container ${error ? 'has-error' : null}`}>
       {label && <label htmlFor={name}>{label}</label>}
-      <input type="hidden" value={+getValue(_value)} name={name} />
+      <input type="hidden" value={Number(getValue(_value))} name={name} />
       <div className="field-wrapper flex flex-grow">
         {isEnable(_value) && <Enabled onClick={() => onChangeFunc()} />}
         {!isEnable(_value) && <Disabled onClick={() => onChangeFunc()} />}

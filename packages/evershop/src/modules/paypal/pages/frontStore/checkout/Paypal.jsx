@@ -127,7 +127,7 @@ export default function PaypalMethod({ createOrderAPI }) {
         </RenderIfTrue>
         <RenderIfTrue
           condition={
-            !!selectedPaymentMethod && selectedPaymentMethod.code === 'paypal'
+            Boolean(selectedPaymentMethod) && selectedPaymentMethod.code === 'paypal'
           }
         >
           <div>
@@ -154,7 +154,7 @@ export default function PaypalMethod({ createOrderAPI }) {
       <div>
         <RenderIfTrue
           condition={
-            !!selectedPaymentMethod && selectedPaymentMethod.code === 'paypal'
+            Boolean(selectedPaymentMethod) && selectedPaymentMethod.code === 'paypal'
           }
         >
           <div>

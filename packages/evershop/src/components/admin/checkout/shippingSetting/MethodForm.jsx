@@ -109,7 +109,7 @@ function MethodForm({ saveMethodApi, closeModal, getZones, method }) {
       : null
   );
   const [hasCondition, setHasCondition] = React.useState(
-    !!method?.conditionType
+    Boolean(method?.conditionType)
   );
   const [name, setName] = React.useState(method?.name || '');
   const [updatingName, setUpdatingName] = React.useState(false);

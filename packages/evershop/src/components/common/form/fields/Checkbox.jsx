@@ -33,7 +33,7 @@ function Checkbox({
   };
 
   React.useEffect(() => {
-    setChecked(!!isChecked);
+    setChecked(Boolean(isChecked));
   }, [isChecked]);
 
   return (
