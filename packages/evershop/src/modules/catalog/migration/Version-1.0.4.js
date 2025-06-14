@@ -25,7 +25,7 @@ export default async (connection) => {
   // Check if a default collection called "Featured Products" already exists
   const featuredProductsExists = await execute(
     connection,
-    `SELECT EXISTS (SELECT 1 FROM collection WHERE code = 'homepage');`
+    "SELECT EXISTS (SELECT 1 FROM collection WHERE code = 'homepage');"
   );
 
   if (featuredProductsExists.rows[0].exists) {

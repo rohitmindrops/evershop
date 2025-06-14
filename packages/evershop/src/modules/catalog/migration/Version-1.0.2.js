@@ -4,23 +4,23 @@ export default async (connection) => {
   // Add a category_id column to the product table
   await execute(
     connection,
-    `ALTER TABLE product ADD COLUMN category_id INT DEFAULT NULL;`
+    "ALTER TABLE product ADD COLUMN category_id INT DEFAULT NULL;"
   );
 
   // Add a foreign key constraint to the category_id column
   await execute(
     connection,
-    `ALTER TABLE product ADD CONSTRAINT "PRODUCT_CATEGORY_ID_CONSTRAINT" FOREIGN KEY ("category_id") REFERENCES "category" ("category_id") ON DELETE SET NULL;`
+    'ALTER TABLE product ADD CONSTRAINT "PRODUCT_CATEGORY_ID_CONSTRAINT" FOREIGN KEY ("category_id") REFERENCES "category" ("category_id") ON DELETE SET NULL;'
   );
 
   // Get 1 category from the product_category table and update product table with according category_id
   await execute(
     connection,
-    `UPDATE product SET category_id = (SELECT category_id FROM product_category WHERE product_id = product.product_id LIMIT 1);`
+    "UPDATE product SET category_id = (SELECT category_id FROM product_category WHERE product_id = product.product_id LIMIT 1);"
   );
 
   // Delete the product_category table
-  await execute(connection, `DROP TABLE product_category;`);
+  await execute(connection, "DROP TABLE product_category;");
 
   // Create a function to build url_key from the name if the url_key is not provided. This function replace whitespace with dash and remove all special characters
   await execute(
@@ -258,12 +258,12 @@ export default async (connection) => {
   // Load all categories and add a category_updated event to the event table
   await execute(
     connection,
-    `INSERT INTO event (name, data) SELECT 'category_updated', row_to_json(category) FROM category;`
+    "INSERT INTO event (name, data) SELECT 'category_updated', row_to_json(category) FROM category;"
   );
 
   // Load all products and add a product_updated event to the event table
   await execute(
     connection,
-    `INSERT INTO event (name, data) SELECT 'product_updated', row_to_json(product) FROM product;`
+    "INSERT INTO event (name, data) SELECT 'product_updated', row_to_json(product) FROM product;"
   );
 };

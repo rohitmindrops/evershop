@@ -3,7 +3,7 @@ import { execute } from '@evershop/postgres-query-builder';
 export default async (connection) => {
   await execute(
     connection,
-    `DROP TRIGGER IF EXISTS "TRIGGER_PRODUCT_AFTER_UPDATE" ON "product";`
+    'DROP TRIGGER IF EXISTS "TRIGGER_PRODUCT_AFTER_UPDATE" ON "product";'
   );
 
   await execute(
@@ -36,6 +36,6 @@ export default async (connection) => {
   // Drop column uuid from product_attribute_value_index
   await execute(
     connection,
-    `ALTER TABLE product_attribute_value_index DROP COLUMN uuid;`
+    "ALTER TABLE product_attribute_value_index DROP COLUMN uuid;"
   );
 };

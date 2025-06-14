@@ -105,7 +105,7 @@ async function install() {
 
   // Test the secure connection
   try {
-    await pool.query(`SELECT 1`);
+    await pool.query("SELECT 1");
     sslMode = 'require';
   } catch (e) {
     if (e.message.includes('does not support SSL')) {
@@ -114,7 +114,7 @@ async function install() {
       sslMode = 'disable';
     } else if (e.message.includes('certificate')) {
       error(
-        `Looks like your database server does not have a valid SSL certificate. Please turn off the SSL option in the database configuration, restart the database server and try again.`
+        "Looks like your database server does not have a valid SSL certificate. Please turn off the SSL option in the database configuration, restart the database server and try again."
       );
     } else {
       error(e);
@@ -124,7 +124,7 @@ async function install() {
 
   // Check postgres database version
   try {
-    const { rows } = await execute(pool, `SHOW SERVER_VERSION;`);
+    const { rows } = await execute(pool, "SHOW SERVER_VERSION;");
     if (rows[0].server_version < '13.0') {
       error(
         `Your database server version(${rows[0].server_version}) is not supported. Please upgrade to PostgreSQL version 13.0 or higher`

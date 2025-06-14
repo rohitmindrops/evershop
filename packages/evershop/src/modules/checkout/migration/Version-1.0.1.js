@@ -16,11 +16,11 @@ export default async (connection) => {
   // Add foreign key from table cart (shipping_zone_id) to table shipping_zone (shipping_zone_id)
   await execute(
     connection,
-    `ALTER TABLE "cart" ADD CONSTRAINT "FK_CART_SHIPPING_ZONE" FOREIGN KEY ("shipping_zone_id") REFERENCES "shipping_zone" ("shipping_zone_id") ON DELETE SET NULL`
+    'ALTER TABLE "cart" ADD CONSTRAINT "FK_CART_SHIPPING_ZONE" FOREIGN KEY ("shipping_zone_id") REFERENCES "shipping_zone" ("shipping_zone_id") ON DELETE SET NULL'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CART_SHIPPING_ZONE" ON "cart" ("shipping_zone_id")`
+    'CREATE INDEX "FK_CART_SHIPPING_ZONE" ON "cart" ("shipping_zone_id")'
   );
 
   await execute(
@@ -39,7 +39,7 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_SHIPPING_ZONE_PROVINCE" ON "shipping_zone_province" ("zone_id")`
+    'CREATE INDEX "FK_SHIPPING_ZONE_PROVINCE" ON "shipping_zone_province" ("zone_id")'
   );
 
   await execute(
@@ -77,10 +77,10 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "FK_ZONE_METHOD" ON "shipping_zone_method" ("zone_id")`
+    'CREATE INDEX "FK_ZONE_METHOD" ON "shipping_zone_method" ("zone_id")'
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_METHOD_ZONE" ON "shipping_zone_method" ("method_id")`
+    'CREATE INDEX "FK_METHOD_ZONE" ON "shipping_zone_method" ("method_id")'
   );
 };

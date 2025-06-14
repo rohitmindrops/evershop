@@ -4,7 +4,7 @@ export default async (connection) => {
   // rename the image column in the product_image table to origin_image
   await execute(
     connection,
-    `ALTER TABLE product_image RENAME COLUMN image TO origin_image`
+    "ALTER TABLE product_image RENAME COLUMN image TO origin_image"
   );
 
   // Add  columns 'thumb_image', 'listing_image', 'single_image', 'is_main' to the product_image table if not exist
@@ -18,7 +18,7 @@ export default async (connection) => {
   );
 
   // Drop the uuid column from the product_image table
-  await execute(connection, `ALTER TABLE product_image DROP COLUMN uuid`);
+  await execute(connection, "ALTER TABLE product_image DROP COLUMN uuid");
 
   // Create a trigger to add an event to the event table when a product image is created
   await execute(
@@ -44,7 +44,7 @@ export default async (connection) => {
   // Update all the column origin_image in the product_image table to add the '/assets' prefix
   await execute(
     connection,
-    `UPDATE product_image SET origin_image = CONCAT('/assets', origin_image)`
+    "UPDATE product_image SET origin_image = CONCAT('/assets', origin_image)"
   );
 
   // Add event to the event table for all the product images
@@ -64,5 +64,5 @@ export default async (connection) => {
   );
 
   // Drop the image column from product table
-  await execute(connection, `ALTER TABLE product DROP COLUMN image`);
+  await execute(connection, "ALTER TABLE product DROP COLUMN image");
 };

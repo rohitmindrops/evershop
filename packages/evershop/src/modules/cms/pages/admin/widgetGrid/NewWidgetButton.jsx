@@ -11,7 +11,7 @@ export default function NewWidgetButton({ widgetTypes }) {
       title="New Widget"
       onAction={() => {
         openAlert({
-          heading: `Select type`,
+          heading: "Select type",
           content: <WidgetTypes types={widgetTypes} />,
           primaryAction: {
             title: 'Cancel',

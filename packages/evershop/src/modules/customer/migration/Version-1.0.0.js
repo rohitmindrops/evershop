@@ -37,7 +37,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CUSTOMER_GROUP" ON "customer" ("group_id")`
+    'CREATE INDEX "FK_CUSTOMER_GROUP" ON "customer" ("group_id")'
   );
 
   await execute(
@@ -63,7 +63,7 @@ export default async (connection) => {
   );
   await execute(
     connection,
-    `CREATE INDEX "FK_CUSTOMER_ADDRESS" ON "customer_address" ("customer_id")`
+    'CREATE INDEX "FK_CUSTOMER_ADDRESS" ON "customer_address" ("customer_id")'
   );
 
   // Prevent deleting a default customer group

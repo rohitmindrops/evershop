@@ -5,7 +5,7 @@ import { resolveOrderStatus } from '../services/updateOrderStatus.js';
 export default async (connection) => {
   await execute(
     connection,
-    `ALTER TABLE "order" ADD COLUMN IF NOT EXISTS "status" varchar DEFAULT NULL;`
+    'ALTER TABLE "order" ADD COLUMN IF NOT EXISTS "status" varchar DEFAULT NULL;'
   );
 
   // Mapping the order status for legacy orders

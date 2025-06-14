@@ -111,16 +111,16 @@ export async function buildEntry(routes, clientOnly = false) {
         const query = `${JSON.stringify(parseGraphql(components))}`;
 
         // Loop through the widgets config and add the query to the widgets
-        let contentServer = `import React from 'react'; `;
+        let contentServer = "import React from 'react'; ";
         contentServer += '\r\n';
-        contentServer += `import ReactDOM from 'react-dom'; `;
+        contentServer += "import ReactDOM from 'react-dom'; ";
         contentServer += '\r\n';
-        contentServer += `import { Area } from '@evershop/evershop/components/common';`;
+        contentServer += "import { Area } from '@evershop/evershop/components/common';";
         contentServer += '\r\n';
-        contentServer += `import { renderHtml } from '@evershop/evershop/components/common';\r\n`;
+        contentServer += "import { renderHtml } from '@evershop/evershop/components/common';\r\n";
         contentServer += imports.join('\r\n');
         contentServer += '\r\n';
-        contentServer += `export default renderHtml;\r\n`;
+        contentServer += "export default renderHtml;\r\n";
         contentServer += `Area.defaultProps.components = ${inspect(areas, {
           depth: 5
         })

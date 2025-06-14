@@ -27,7 +27,7 @@ export async function createComponents(routes, clientOnly = false) {
       import {Area} from '../../src/lib/components/Area';
       `;
       if (isProductionMode()) {
-        contentClient += `import Hydrate from '../../src/lib/components/react/client/Hydrate';`;
+        contentClient += "import Hydrate from '../../src/lib/components/react/client/Hydrate';";
       } else {
         contentClient += `import { App } from '../../src/lib/components/react/client/Client';
       const hot = require('webpack-hot-middleware/client?path=/eHot/${route.id}&reload=true');
@@ -65,11 +65,11 @@ export async function createComponents(routes, clientOnly = false) {
       );
 
       if (!clientOnly) {
-        let contentServer = `import React from 'react'; `;
+        let contentServer = "import React from 'react'; ";
         contentServer += '\r\n';
-        contentServer += `import ReactDOM from 'react-dom'; `;
+        contentServer += "import ReactDOM from 'react-dom'; ";
         contentServer += '\r\n';
-        contentServer += `import {Area} from '@evershop/evershop/components/common/Area';`;
+        contentServer += "import {Area} from '@evershop/evershop/components/common/Area';";
         contentServer += '\r\n';
         contentServer += `Area.defaultProps.components = ${inspect(components, {
           depth: 5

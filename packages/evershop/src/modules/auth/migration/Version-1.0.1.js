@@ -2,7 +2,7 @@ import { execute } from '@evershop/postgres-query-builder';
 
 export default async (connection) => {
   // Remove user_token_secret table
-  await execute(connection, `DROP TABLE IF EXISTS user_token_secret;`);
+  await execute(connection, "DROP TABLE IF EXISTS user_token_secret;");
 
   // Create a session table following the `connect-pg-simple` package
   await execute(
@@ -18,6 +18,6 @@ export default async (connection) => {
 
   await execute(
     connection,
-    `CREATE INDEX "IDX_SESSION_EXPIRE" ON "session" ("expire");`
+    'CREATE INDEX "IDX_SESSION_EXPIRE" ON "session" ("expire");'
   );
 };

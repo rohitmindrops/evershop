@@ -176,7 +176,7 @@ export default async (request, response, delegate, next) => {
       // Call PayPal API to create order using axios
       const axiosInstance = await createAxiosInstance(request);
       const { data } = await axiosInstance.post(
-        `/v2/checkout/orders`,
+        "/v2/checkout/orders",
         finalPaypalOrderData,
         {
           validateStatus: (status) => status < 500

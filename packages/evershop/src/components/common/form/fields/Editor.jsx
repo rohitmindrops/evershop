@@ -84,7 +84,7 @@ export default function Editor({
     async function initSwappable() {
       const Swappable = await loadSwappable();
 
-      const swappable = new Swappable(document.querySelectorAll(`div#rows`), {
+      const swappable = new Swappable(document.querySelectorAll("div#rows"), {
         draggable: 'div.row__container',
         handle: 'div.row__container .drag__icon',
         mirror: {

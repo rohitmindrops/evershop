@@ -19,7 +19,7 @@ export default async (connection) => {
   // Remove the trigger if it exists
   await execute(
     connection,
-    `DROP TRIGGER IF EXISTS "TRIGGER_AFTER_INSERT_ORDER_ITEM" ON "order_item"`
+    'DROP TRIGGER IF EXISTS "TRIGGER_AFTER_INSERT_ORDER_ITEM" ON "order_item"'
   );
 
   await execute(
