@@ -17,7 +17,7 @@ export default async (request, response, deledate, next) => {
     // Each payment method is encouraged to have a middleware to register itself
     for (let i = 0; i < results.length; i += 1) {
       const result = results[i];
-      if (result && result.methodCode && result.methodName) {
+      if (result?.methodCode && result.methodName) {
         // This value will be considered as a payment method
         data.push({ code: result.methodCode, name: result.methodName });
       }

@@ -2,7 +2,7 @@ import isarray from 'isarray';
 
 function parse(e, t) {
   for (
-    var r, n = [], o = 0, a = 0, i = '', p = (t && t.delimiter) || '/';
+    var r, n = [], o = 0, a = 0, i = '', p = (t?.delimiter) || '/';
     (r = PATH_REGEXP.exec(e)) != null;
 
   ) {

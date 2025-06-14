@@ -201,7 +201,7 @@ export function addDefaultMiddlewareFuncs(app, routes) {
       // Get the current http method
       const method = request.method.toUpperCase();
       // Check if the route supports the current http method
-      if (route && route.method.includes(method)) {
+      if (route?.method.includes(method)) {
         request.currentRoute = route;
       }
       return next();

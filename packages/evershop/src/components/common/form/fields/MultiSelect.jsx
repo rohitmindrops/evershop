@@ -37,8 +37,7 @@ const MultiSelect = React.forwardRef((props, ref) => {
           <option value="" disabled>
             {_('Please select')}
           </option>
-          {options &&
-            options.map((option, key) => (
+          {options?.map((option, key) => (
               <option key={key} value={option.value}>
                 {option.text}
               </option>
