@@ -30,7 +30,7 @@ export default function ShipmentStep({
       id: 'shipment',
       title: _('Shipment'),
       previewTitle: _('Ship to'),
-      isCompleted: !!(shippingAddress && shippingMethod),
+      isCompleted: Boolean(shippingAddress && shippingMethod),
       preview: shippingAddress
         ? `${shippingAddress.address1}, ${shippingAddress.city}, ${shippingAddress.country.name}`
         : '',

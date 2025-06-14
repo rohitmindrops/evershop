@@ -15,7 +15,7 @@ export default () => {
   };
 
   request.isUserLoggedIn = function isUserLoggedIn() {
-    return !!this.session.userID;
+    return Boolean(this.session.userID);
   };
 
   request.getCurrentUser = function getCurrentUser() {

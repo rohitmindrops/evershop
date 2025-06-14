@@ -86,7 +86,7 @@ export default () => {
 
   (request as EvershopRequest).isCustomerLoggedIn =
     function isCustomerLoggedIn() {
-      return !!this.session?.customerID;
+      return Boolean(this.session?.customerID);
     };
 
   (request as EvershopRequest).getCurrentCustomer =

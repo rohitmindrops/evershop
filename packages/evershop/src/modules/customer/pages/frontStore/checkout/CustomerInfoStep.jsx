@@ -25,7 +25,7 @@ export default function ContactInformationStep({
       id: 'contact',
       title: _('Contact information'),
       previewTitle: _('Contact'),
-      isCompleted: !!customerEmail,
+      isCompleted: Boolean(customerEmail),
       preview: customerEmail || '',
       sortOrder: 5,
       editable: !currentCustomer

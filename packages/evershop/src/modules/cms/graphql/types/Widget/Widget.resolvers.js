@@ -18,7 +18,7 @@ export default {
     widgets: async (_, { filters = [] }, { user }) => {
       const query = getWidgetsBaseQuery();
       const root = new WidgetCollection(query);
-      await root.init(filters, !!user);
+      await root.init(filters, Boolean(user));
       return root;
     },
     widgetTypes: () => {

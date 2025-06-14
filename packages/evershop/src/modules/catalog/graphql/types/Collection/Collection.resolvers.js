@@ -25,7 +25,7 @@ export default {
     products: async (collection, { filters = [] }, { user }) => {
       const query = getProductsByCollectionBaseQuery(collection.collectionId);
       const root = new ProductCollection(query);
-      await root.init(filters, !!user);
+      await root.init(filters, Boolean(user));
       return root;
     },
     description: ({ description }) => {

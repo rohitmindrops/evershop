@@ -21,7 +21,7 @@ export default async (request, response, delegate, next) => {
 
     const zoneId = zone.insertId;
     const provincePromises = provinces
-      .filter((p) => !!p)
+      .filter((p) => Boolean(p))
       .map((province) =>
         insert('shipping_zone_province')
           .given({

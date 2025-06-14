@@ -180,7 +180,7 @@ export default function CheckoutForm({
   }
   return (
     <>
-      <RenderIfTrue condition={!!(stripe && elements)}>
+      <RenderIfTrue condition={Boolean(stripe && elements)}>
         <div>
           <div className="stripe-form">
             {stripePublishableKey?.startsWith('pk_test') && (
@@ -194,7 +194,7 @@ export default function CheckoutForm({
           </div>
         </div>
       </RenderIfTrue>
-      <RenderIfTrue condition={!!(!stripe || !elements)}>
+      <RenderIfTrue condition={Boolean(!stripe || !elements)}>
         <div className="flex justify-center p-5">
           <Spinner width={20} height={20} />
         </div>

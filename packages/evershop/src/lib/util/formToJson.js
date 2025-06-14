@@ -13,7 +13,7 @@ function update(data, keys, value) {
   }
 
   // Try converting key to a numeric value
-  const index = +key;
+  const index = Number(key);
   if (!Number.isNaN(index)) {
     // We have a numeric index, make data a numeric array
     // This will not work if this is a associative array

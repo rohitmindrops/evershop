@@ -49,7 +49,7 @@ export default function ShippingMethods({
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       const { fields } = formContext;
-      let check = !!fields.length;
+      let check = Boolean(fields.length);
       const country = fields.find((f) => f.name === 'address[country]');
       const province = fields.find((f) => f.name === 'address[province]');
       // Check = false if either country or province is required and not filled
