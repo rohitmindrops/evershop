@@ -343,7 +343,7 @@ export function registerCartBaseFields(fields) {
               .from('coupon')
               .where('coupon.coupon', '=', this.getData('coupon'))
               .load(pool);
-            if (coupon && coupon.free_shipping) {
+            if (coupon?.free_shipping) {
               return 0;
             }
             const shippingMethodQuery = select().from('shipping_method');

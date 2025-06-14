@@ -4,7 +4,7 @@ export default {
       const defaultProductTaxClassId = setting.find(
         (s) => s.name === 'defaultProductTaxClassId'
       );
-      if (defaultProductTaxClassId && defaultProductTaxClassId.value) {
+      if (defaultProductTaxClassId?.value) {
         return defaultProductTaxClassId.value;
       } else {
         return null;
@@ -14,7 +14,7 @@ export default {
       const defaultShippingTaxClassId = setting.find(
         (s) => s.name === 'defaultShippingTaxClassId'
       );
-      if (defaultShippingTaxClassId && defaultShippingTaxClassId.value) {
+      if (defaultShippingTaxClassId?.value) {
         return defaultShippingTaxClassId.value;
       } else {
         return null;
@@ -24,7 +24,7 @@ export default {
       const baseCalculationAddress = setting.find(
         (s) => s.name === 'baseCalculationAddress'
       );
-      if (baseCalculationAddress && baseCalculationAddress.value) {
+      if (baseCalculationAddress?.value) {
         return baseCalculationAddress.value;
       } else {
         return null;

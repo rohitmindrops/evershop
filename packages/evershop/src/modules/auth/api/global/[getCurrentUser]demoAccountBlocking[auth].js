@@ -14,7 +14,7 @@ export default (request, response, delegate, next) => {
     const currentUserEmail = user?.email;
     const demoUserEmails = getEnv('DEMO_USER_EMAILS', '').split(',');
 
-    if (demoUserEmails && demoUserEmails.includes(currentUserEmail)) {
+    if (demoUserEmails?.includes(currentUserEmail)) {
       response.status(UNAUTHORIZED).json({
         error: {
           status: UNAUTHORIZED,
