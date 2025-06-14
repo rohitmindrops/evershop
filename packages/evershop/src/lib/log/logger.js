@@ -128,7 +128,7 @@ addProcessor(
           })
         );
         const consoleTransport = new winston.transports.Console();
-        const logFile = getEnv('LOG_FILE', undefined);
+        const logFile = getEnv('LOG_FILE');
         // Default transports
         const DEFAULT_CONFIG = {
           level: isDebugging ? 'silly' : getEnv('LOGGER_LEVEL', 'warn'),

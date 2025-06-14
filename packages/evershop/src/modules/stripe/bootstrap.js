@@ -18,7 +18,7 @@ export default () => {
             if (parseInt(stripeStatus, 10) !== 1) {
               return null;
             } else {
-              this.setError('payment_method', undefined);
+              this.setError('payment_method');
               return paymentMethod;
             }
           }

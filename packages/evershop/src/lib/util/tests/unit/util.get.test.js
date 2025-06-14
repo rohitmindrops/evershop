@@ -9,12 +9,12 @@ describe('Test until get', () => {
 
   it('It should return undefined if the object is not an object', () => {
     const object = 1;
-    expect(get(object, 'a.b')).toEqual(undefined);
+    expect(get(object, 'a.b')).toEqual();
   });
 
   it('It should return undefined if the path is not found', () => {
     const object = { a: 1, b: { c: 1 } };
-    expect(get(object, 'a.b.c')).toEqual(undefined);
+    expect(get(object, 'a.b.c')).toEqual();
   });
 
   it('It should return default value if the path is not found', () => {

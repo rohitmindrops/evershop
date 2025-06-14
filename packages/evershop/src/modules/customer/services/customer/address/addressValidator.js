@@ -5,7 +5,7 @@ import { getAjv } from '../../../../base/services/getAjv.js';
  * This function validates the address using the schema defined in the json configuration {customer: {addressSchema: { ... }}}
  */
 export const validateAddress = (address) => {
-  const jsonSchema = getConfig('customer.addressSchema', undefined);
+  const jsonSchema = getConfig('customer.addressSchema');
   if (!jsonSchema) {
     return true;
   }

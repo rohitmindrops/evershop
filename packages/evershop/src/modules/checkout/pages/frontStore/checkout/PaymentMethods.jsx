@@ -6,7 +6,7 @@ import React from 'react';
 
 export default function PaymentMethods({ getMethodsAPI }) {
   const [methods, setMethods] = React.useState([]);
-  const [selectedMethod, setSelectedMethod] = React.useState(undefined);
+  const [selectedMethod, setSelectedMethod] = React.useState();
 
   React.useEffect(() => {
     axios

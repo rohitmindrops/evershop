@@ -23,7 +23,7 @@ describe('buildMiddlewareFunction', () => {
 
     const delegates = test.mock.results[0].value;
     expect(delegates.returnOne).toEqual(1);
-    expect(delegates.returnTwo).toEqual(undefined);
+    expect(delegates.returnTwo).toEqual();
     expect(delegates.returnThree).toEqual(3);
   });
 
